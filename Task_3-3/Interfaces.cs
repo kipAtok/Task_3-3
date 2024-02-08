@@ -8,5 +8,5 @@ interface IPrinter
 interface IArrBase: IPrinter
 {
     public double Avg { get; }
-    public void FillArr(bool userFill = false);
+    public void FillArr(bool userFill);
 }

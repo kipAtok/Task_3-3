@@ -32,7 +32,7 @@ class OneDimentionArr: ArrBase
         Console.WriteLine();
     }
 
-    public override void FillArr(bool userFill = false)
+    public override void FillArr(bool userFill)
     {
         if (userFill)
         {
@@ -46,17 +46,6 @@ class OneDimentionArr: ArrBase
 
     protected override void ManualFill()
     {
-        Random rnd = new Random();
-        int length = rnd.Next(3, 10);
-        _myArr = new int[length];
-        for (int i = 0; i < length; i++)
-        {
-            _myArr[i] = rnd.Next(1, 10);
-        }
-    }
-
-    protected override void AutoFill()
-    {
         Console.Write("Enter the length of the array: ");
         int length = int.Parse(Console.ReadLine());
         _myArr = new int[length];
@@ -65,5 +54,16 @@ class OneDimentionArr: ArrBase
             Console.Write($"Enter a value of {i + 1} element: ");
             _myArr[i] = int.Parse(Console.ReadLine());
         }
+    }
+
+    protected override void AutoFill()
+    {
+        Random rnd = new Random();
+        int length = rnd.Next(3, 10);
+        _myArr = new int[length];
+        for (int i = 0; i < length; i++)
+        {
+            _myArr[i] = rnd.Next(1, 10);
+        } 
     }
 }

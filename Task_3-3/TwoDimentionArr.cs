@@ -38,7 +38,7 @@ class TwoDimentionArr: ArrBase
         }
     }
 
-    public override void FillArr(bool userFill = false)
+    public override void FillArr(bool userFill)
     {
         if (userFill)
         {
