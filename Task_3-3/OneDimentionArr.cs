@@ -32,18 +32,6 @@ class OneDimentionArr: ArrBase
         Console.WriteLine();
     }
 
-    public override void FillArr(bool userFill)
-    {
-        if (userFill)
-        {
-            ManualFill();
-        }
-        else
-        {
-            AutoFill();
-        }
-    }
-
     protected override void ManualFill()
     {
         Console.Write("Enter the length of the array: ");

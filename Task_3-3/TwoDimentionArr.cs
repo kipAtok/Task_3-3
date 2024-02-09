@@ -38,18 +38,6 @@ class TwoDimentionArr: ArrBase
         }
     }
 
-    public override void FillArr(bool userFill)
-    {
-        if (userFill)
-        {
-            ManualFill();
-        }
-        else
-        {
-            AutoFill();
-        }
-    }
-
     protected override void ManualFill()
     {
         Console.Write("Enter the depth of the array: ");

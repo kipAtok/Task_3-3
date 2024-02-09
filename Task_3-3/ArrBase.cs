@@ -4,7 +4,17 @@ abstract class ArrBase: IArrBase, IPrinter
 {
     public abstract double Avg { get; }
 
-    public abstract void FillArr(bool userFill);
+    public virtual void FillArr(bool userFill)
+    {
+        if (userFill)
+        {
+            ManualFill();
+        }
+        else
+        {
+            AutoFill();
+        }
+    }
 
     public abstract void Print();
 
