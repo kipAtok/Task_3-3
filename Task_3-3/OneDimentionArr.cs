@@ -1,6 +1,6 @@
 using System;
 
-class OneDimentionArr: ArrBase
+class OneDimentionArr: ArrBase, IOneDimentionArr
 {
     private int[] _myArr;
 
@@ -19,6 +19,34 @@ class OneDimentionArr: ArrBase
                 sum += num;
             }
             return sum / _myArr.Length;
+        }
+    }
+
+    public int[] Uniq
+    {
+        get
+        {
+            int[] uniqArr = new int[_myArr.Length];
+            int uniqAmount = 1;
+            uniqArr[0] = _myArr[0];
+            for (int i = 1; i < _myArr.Length; i++)
+            {
+                bool found = true;
+                for (int j = 0; j < i; j++)
+                {
+                    if (_myArr[i] == _myArr[j])
+                    {
+                        found = false;
+                        break;
+
+                    }
+                }
+                if (found)
+                {
+                    uniqArr[uniqAmount++] = _myArr[i];
+                }
+            }
+            return uniqArr;
         }
     }
 

@@ -1,6 +1,6 @@
 using System;
 
-class LadderArr: ArrBase
+class LadderArr: ArrBase, ILAdderArr
 {
     private int[][] _myArr;
 
@@ -22,6 +22,30 @@ class LadderArr: ArrBase
                 }
             }
             return sum / _myArr.Length;
+        }
+    }
+
+    public int[][] WithEveryEvenToIndexProduct
+    {
+        get
+        {
+            int[][] toRet = new int[_myArr.GetLength(0)][];
+            for (int i = 0; i < _myArr.GetLength(0); i++)
+            {
+                toRet[i] = new int[_myArr[i].Length];
+                for (int j = 0; j < _myArr[i].Length; j++)
+                {
+                    if (_myArr[i][j] % 2 == 0)
+                    {
+                        toRet[i][j] = i * j;
+                    }
+                    else
+                    {
+                        toRet[i][j] = _myArr[i][j];
+                    }
+                }
+            }
+            return toRet;
         }
     }
 

@@ -1,6 +1,6 @@
 using System;
 
-class TwoDimentionArr: ArrBase
+class TwoDimentionArr: ArrBase, ITwoDimentionArr
 {
     private int[,] _myArr;
 
@@ -33,6 +33,26 @@ class TwoDimentionArr: ArrBase
             for (int j = 0; j < _myArr.GetLength(1); j++)
             {
                 Console.Write(_myArr[i, j] + " ");
+            }
+            Console.WriteLine();
+        }
+    }
+
+    public void PrintSnake()
+    {
+        Console.WriteLine("Your array with reversed even lines: ");
+        for (int i = 0; i < _myArr.GetLength(0); i++)
+        {
+            for (int j = 0; j < _myArr.GetLength(1); j++)
+            {
+                if (i % 2 == 0)
+                {
+                    Console.Write(_myArr[i, j] + " ");
+                }
+                else
+                {
+                    Console.Write(_myArr[i, _myArr.GetLength(1) - j - 1] + " ");
+                }
             }
             Console.WriteLine();
         }
