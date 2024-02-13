@@ -22,7 +22,7 @@ interface ITwoDimentionArr: IArrBase, IPrinter
     public void PrintSnake();
 }
 
-interface ILAdderArr: IArrBase, IPrinter
+interface ILadderArr: IArrBase, IPrinter
 {
     public int[][] WithEveryEvenToIndexProduct { get; }
 }

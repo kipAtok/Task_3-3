@@ -29,5 +29,28 @@ class Program
         {
             elem.Print();
         }
+
+        arrs[0].Print();
+        Console.WriteLine("Uniq values: ");
+        foreach (int i in ((IOneDimentionArr)arrs[0]).Uniq)
+        {
+            Console.Write(i + " ");
+        }
+        Console.WriteLine();
+
+        arrs[1].Print();
+        ((ITwoDimentionArr)arrs[1]).PrintSnake();
+
+        arrs[2].Print();
+        int[][] ldTemp = ((ILadderArr)arrs[2]).WithEveryEvenToIndexProduct;
+        Console.WriteLine("Your ladder array with every even value converted to it's index product: ");
+        foreach (int[] line in ldTemp)
+        {
+            foreach (int num in line)
+            {
+                Console.Write(num + " ");
+            }
+            Console.WriteLine();
+        }
     }
 }

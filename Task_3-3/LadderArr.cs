@@ -1,6 +1,6 @@
 using System;
 
-class LadderArr: ArrBase, ILAdderArr
+class LadderArr: ArrBase, ILadderArr
 {
     private int[][] _myArr;
 
